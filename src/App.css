@@ -1,0 +1,497 @@
+@import "_normalize.css";
+
+html {
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 80px;
+}
+
+.center {
+  text-align: center;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 1700px;
+}
+
+.container, .elements-color-desc {
+  display: flex;
+  margin-top: 30px;
+}
+
+.elements-color-desc {
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-section {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: #20A4F3;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-button, .signup-button {
+  margin-top: 20px;
+}
+
+input {
+  padding: 12px 90px 12px 38px;
+  font-size: 14px;
+  background: #fbfbfb;
+  border: 1px solid #fbfbfb;
+  border-radius: 60px;
+}
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 0 20px 0 20px;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+}
+
+.logout-container {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .logout-container {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+
+/* SEARCH BAR & REACTION BAR */
+.search-bar, .reaction-bar,
+.login-form-input-group,
+.signup-form-input-group {
+  position: relative;
+  margin: 0 auto;
+}
+
+.search-bar-icon, .reaction-bar-icon,
+.login-form-icon, .signup-form-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 3px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#element-autocomplete-list {
+  position: absolute;
+  margin: 0;
+  margin-top: 5px;
+  list-style: none;
+  line-height: 1.8;
+  background: #fbfbfb;
+  width: 100%;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#element-autocomplete-list li {
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+
+/* REACTION OUTPUT POPUP */
+.reaction-output {
+  border-radius: 5px;
+  padding: 50px;
+  background: #fbfbfb;
+  text-align: center;
+  box-shadow: 0px 4px 10.6px 2px rgba(0, 0, 0, 0.25);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+
+  width: 40%;
+  height: fit-content;
+}
+
+.reaction-output .reaction-output-icon {
+  font-size: 80px;
+  margin-bottom: 25px;
+  color: #20A4F3;
+}
+
+.reaction-output-close-button {
+  font-size: 18px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  cursor: pointer;
+  color: #ccc;
+}
+
+.reaction-output-close-button:hover {
+  color: #333;
+}
+
+.reaction-input-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.reaction-input-value h4, .reaction-after-balancing h4,
+.reaction-input-value p {
+  margin: 0;
+  padding: 0;
+}
+
+.equation-overview-link p {
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+/* ELEMENTS COLOR DESCRIPTION SECTION */
+.element-color-row1, .element-color-row2,
+.element-color {
+  display: flex;
+  align-items: center;
+}
+
+.element-color {
+  margin: 0 10px 0 10px;
+}
+
+.element-color .fa-circle {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+
+/* PERIODIC TABLE */
+#table {
+  display: grid;
+  grid-template-columns: repeat(17, auto) 1fr;
+}
+
+.site-title {
+  font-size: 1rem;
+}
+
+/* Every element box  */
+.element {
+  cursor: pointer;
+  width: 5vw;
+  height: 5vw;
+  padding: 2px;
+  /* border: 1px solid #333; */
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.number {
+  float: left;
+  font-size: 0.5vw;
+  position: absolute;
+}
+
+.symbol {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5vw;
+  font-size: 2.5vw;
+}
+
+.element-name {
+  font-size: 0.8vw;
+  text-align: center;
+}
+
+#element-box .symbol {
+  font-size: 5vw;
+}
+
+#element-box .number {
+  font-size: 1vw;
+}
+
+#element-box .element-name {
+  font-size: 1.5vw;
+}
+
+#element-box {
+  grid-column: 3/5;
+  grid-row: 2/4;
+  margin: 0;
+  padding: 0.5vw;
+  height: 120px;
+  min-width: 120px;
+  overflow: hidden;
+}
+
+/* Information Table  */
+#information {
+  grid-column: 5/13;
+  grid-row: 2/4;
+  padding: 0.5vw;
+  padding-top: 0;
+  font-size: 1vw;
+  overflow: hidden;
+}
+
+#information h1 {
+  margin: 0 0 0.5vw 0;
+}
+
+.big_title {
+  display: inline-block;
+}
+
+.cat_name {
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-left: 5px;
+  top: -0.7vw;
+  position: relative;
+}
+
+.close-button {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.appearance {
+  margin-bottom: 0.5vw;
+}
+
+.atom_info {
+  margin-bottom: 0.5vw;
+  color: #998100;
+}
+
+/* Helium to the top right  */
+.element-2 {
+  grid-column-start: -2;
+}
+
+/* Boron & Alumunium to the right  */
+.element-5,
+.element-13 {
+  grid-column-start: 13;
+}
+
+/* Lanthinide & Actinoid split  */
+.element-58,
+.element-90 {
+  grid-column-start: 3;
+}
+
+/* I DID NOT KNOW THERE WAS 119th ONE! */
+
+.element-119 {
+  grid-column-start: -2;
+}
+
+/* Categories and Groups */
+
+/* Alkaline Earth Metal  */
+.alkaline {
+  background: #20a4f3;
+  background: linear-gradient(60deg, #20a4f3, #136c9e);
+}
+
+/* Alkali Metal  */
+.alkali {
+  background: #ce2d4f;
+  background: linear-gradient(60deg, #ce2d4f, #931f3e);
+}
+
+/* Noble Gas  */
+.noble {
+  background: #662e9b;
+  background: linear-gradient(60deg, #662e9b, #451c6a);
+}
+
+/* Transition Metal  */
+.transition {
+  background: #ff8600;
+  background: linear-gradient(60deg, #ff8600, #e57000);
+}
+
+/* Polyatomic Non Metal  */
+.polyatomic {
+  background: #faa916;
+  background: linear-gradient(60deg, #faa916, #d98b14);
+}
+
+/* Diatomic Non Metal  */
+.diatomic {
+  background: #43894e;
+  background: linear-gradient(60deg, #43894e, #2e5f38);
+}
+
+/* Post Transition Metal  */
+.post-transition {
+  background: #006da1;
+  background: linear-gradient(60deg, #006da1, #004771);
+}
+
+/* Metalloid  */
+.metalloid {
+  background: #c41e3d;
+  background: linear-gradient(60deg, #c41e3d, #93172e);
+}
+
+/* Lanthanide  */
+.lanthanide {
+  background: #d84a05;
+  background: linear-gradient(60deg, #d84a05, #a83103);
+  /* Put a space to seperate the split table  */
+  margin-top: 2.5vw;
+}
+
+/* Actinide  */
+.actinide {
+  background: #52713f;
+  background: linear-gradient(60deg, #52713f, #38552e);
+}
+
+/* The Unknown Element  */
+.unknown {
+  background: #7f7f7f;
+  background: linear-gradient(60deg, #7f7f7f, #5a5a5a);
+}
+
+/* Disable the top space for the first lathenide which sits inside the table  */
+.element-57 {
+  margin: 0;
+}
+
+/* When in the hover state  */
+.active {
+  /* background: #fff; */
+  background: #000;
+  color: #fff;
+  /* border-color: yellow; */
+}
+
+.footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .element {
+    border: 0;
+    width: 7vw;
+    height: 7vw;
+  }
+}
+
+
+/* LOGIN PAGE */
+
+.container-login,
+.container-signup {
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.login-page-logo,
+.signup-page-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page-logo h1,
+.signup-page-logo h1 {
+  margin-left: 10px;
+  font-size: 42px;
+  text-align: left;
+}
+
+.container-login p,
+.container-signup p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.login-form .login-form-input-group,
+.signup-form .signup-form-input-group {
+  width: 70%;
+}
+
+.login-form input,
+.signup-form input {
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+

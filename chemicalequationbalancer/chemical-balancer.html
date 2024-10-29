@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Chemical Equation Balancer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form onsubmit="event.preventDefault(); doBalance();">
+    
+    <label for="inputFormula">Input: </label>
+    <input type="text" id="inputFormula" placeholder="Enter value"/>
+
+    <button class="btn" type="submit">Balance</button>
+    <button class="btn" type="button" onclick="doRandom();">Random</button>
+
+    <div class="result">
+        <p>Balanced: </p>
+        <p> <output id="balanced" for="inputFormula"></output><output id="message" for="inputFormula"></output></p>
+        <p> <output for="inputFormula"><code id="codeOutput">&#xA0;</code></output></p>
+    </div>
+
+  </form>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
